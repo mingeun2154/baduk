@@ -1,2 +1,6 @@
-package controller;public class StartScreenController {
+package controller;
+
+import renderer.BRenderer;
+
+public class StartScreenController {
 }
