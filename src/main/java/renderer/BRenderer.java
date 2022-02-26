@@ -23,10 +23,12 @@ public class BRenderer extends JFrame{
     // BRenderer에 버튼을 추가한다.
     public static void addButton(Button button){
         JButton jButton=new JButton();
-        jButton.setSize(button.getWidth(), button.getHeight());
-        jButton.setLocation(button.getX(), button.getY());
+//        jButton.setSize(button.getWidth(), button.getHeight());
+        jButton.setBounds(button.getX(), button.getY(), button.getWidth(), button.getHeight());
         jButton.setText(button.getInnerText());
+        jButton.setFont(new Font("", button.IsBold(), button.getFontSize()));
         jButton.setVisible(button.IsVisible());
         singleton.add(jButton);
     }
+
 }
