@@ -6,5 +6,6 @@ public class BadukApplication {
 
         BPerformer bPerformer = new BPerformer();
         bPerformer.init_program();
+        bPerformer.getJFrame().setVisible(true);
     }
 }

@@ -1,6 +1,6 @@
 package domain;
 
-public class PopupWindow {
+public class PopupFrame {
 
     // PopupWindow는 프로그램이 실행되는 동안 값이 바뀌지 않는다.
     private static final String title="바둑";

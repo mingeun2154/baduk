@@ -1,7 +1,7 @@
 package renderer;
 
 import domain.Button;
-import domain.PopupWindow;
+import domain.PopupFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,9 +14,9 @@ public class BRenderer extends JFrame{
 
     public static BRenderer getInstance() {
         singleton.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        singleton.setTitle(PopupWindow.getTitle());
-        singleton.setSize(PopupWindow.getWidth(), PopupWindow.getHeight());
-        singleton.setLocationRelativeTo((Component) PopupWindow.getLocation());
+        singleton.setTitle(PopupFrame.getTitle());
+        singleton.setSize(PopupFrame.getWidth(), PopupFrame.getHeight());
+        singleton.setLocationRelativeTo((Component) PopupFrame.getLocation());
         return singleton;
     }
 

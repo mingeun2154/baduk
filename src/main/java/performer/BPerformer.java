@@ -3,13 +3,9 @@ package performer;
 import controller.StartScreenController;
 import domain.LoadGameButton;
 import domain.NewGameButton;
-import domain.PopupWindow;
 import renderer.BRenderer;
 
 import javax.swing.*;
-import java.awt.*;
-
-import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 // Spring Container같은 객체이다.
 public class BPerformer {
@@ -31,7 +27,7 @@ public class BPerformer {
         bRenderer.addButton(newGameButton);
         bRenderer.addButton(loadGameButton);
         bRenderer.setLayout(null);
-        bRenderer.setVisible(PopupWindow.IsVisible());
+//        bRenderer.setVisible(PopupWindow.IsVisible());
     }
 
     public JFrame getJFrame(){
