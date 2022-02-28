@@ -10,7 +10,7 @@ public class BPerformerTest {
         JFrame jFrame =bPerformer.getJFrame();
 
         // when
-        bPerformer.init_program();
+        bPerformer.init_program(0);
 
         // then
         JFrame mainFrame = bPerformer.getJFrame();

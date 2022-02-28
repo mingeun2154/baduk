@@ -5,7 +5,6 @@ public class BadukApplication {
         System.out.println("start game");
 
         BPerformer bPerformer = new BPerformer();
-        bPerformer.init_program();
-        bPerformer.getJFrame().setVisible(true);
+        bPerformer.init_program(1);
     }
 }

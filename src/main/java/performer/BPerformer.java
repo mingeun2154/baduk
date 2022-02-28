@@ -3,6 +3,7 @@ package performer;
 import controller.StartScreenController;
 import domain.LoadGameButton;
 import domain.NewGameButton;
+import domain.PopupFrame;
 import renderer.BRenderer;
 
 import javax.swing.*;
@@ -22,12 +23,17 @@ public class BPerformer {
         loadGameButton = new LoadGameButton();
         newGameButton = new NewGameButton();
     }
+
     // 시작화면
-    public void init_program(){
+    public void init_program(int mode){
+        // mode=1 : production
+        // mode=0 : test
         bRenderer.addButton(newGameButton);
         bRenderer.addButton(loadGameButton);
         bRenderer.setLayout(null);
-//        bRenderer.setVisible(PopupWindow.IsVisible());
+        if(mode==1){
+            bRenderer.setVisible(PopupFrame.IsVisible());
+        }
     }
 
     public JFrame getJFrame(){
