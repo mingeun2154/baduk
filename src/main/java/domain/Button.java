@@ -8,6 +8,7 @@ public class Button {
     private int height;
     // 텍스트
     private String innerText;
+    private String name;
     private int fontSize;
     private int isBold;
 
@@ -44,6 +45,9 @@ public class Button {
     public void setIsBold(int isBold){
         this.isBold = isBold;
     }
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public int getX() {
         return x;
@@ -61,6 +65,9 @@ public class Button {
         return innerText;
     }
     public int getFontSize(){return fontSize;}
+    public String getName() {
+        return name;
+    }
     public int IsBold(){return isBold;}
     public boolean IsVisible(){
         return isVisible;
