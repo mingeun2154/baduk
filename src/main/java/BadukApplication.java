@@ -1,10 +1,8 @@
-import performer.BPerformer;
+import View.BRenderer;
 
 public class BadukApplication {
     public static void main(String[] args){
         System.out.println("start game");
-
-        BPerformer bPerformer = new BPerformer();
-        bPerformer.init_program(1);
+        BRenderer bRenderer = new BRenderer();
     }
 }
