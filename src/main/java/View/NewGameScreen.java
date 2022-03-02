@@ -4,11 +4,11 @@ import component.CheckerBoard;
 
 import javax.swing.*;
 
-public class NewGamePanel extends JPanel {
+public class NewGameScreen extends JPanel {
 
     private CheckerBoard checkerBoard;
 
-    public NewGamePanel(){
+    public NewGameScreen(){
         setLayout(null);
 
         initCheckerBoard();
