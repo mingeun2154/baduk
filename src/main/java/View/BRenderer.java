@@ -1,7 +1,6 @@
 package View;
 
 import component.PopupWindow;
-import controller.StartScreenController;
 
 import javax.swing.*;
 
@@ -12,7 +11,7 @@ public class BRenderer extends JFrame {
 
     public BRenderer(){
         // panel 초기화
-        startScreenPanel = new StartScreenPanel();
+        startScreenPanel = new StartScreen();
         // frame 초기화
         initWindow();
         this.add(startScreenPanel);
@@ -26,5 +25,7 @@ public class BRenderer extends JFrame {
         this.setTitle(PopupWindow.getTitle());
         this.setLocationRelativeTo(PopupWindow.getLocation());
     }
+
+
 
 }
