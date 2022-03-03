@@ -1,6 +1,6 @@
 package View;
 
-import component.PopupWindow;
+import content.PopupWindow;
 
 import javax.swing.*;
 
