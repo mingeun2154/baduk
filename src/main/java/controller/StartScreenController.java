@@ -13,6 +13,7 @@ public class StartScreenController implements ActionListener {
             System.out.println("불러오기");
         }else if(button.getName()=="NewGameButton"){
             System.out.println("새 게임");
+
         }else{
             System.out.println("nothing");
         }

@@ -1,4 +1,4 @@
-package component;
+package content;
 
 // JFrame 의 정보를 담고 있다.
 

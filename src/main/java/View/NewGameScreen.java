@@ -1,6 +1,6 @@
 package View;
 
-import component.CheckerBoard;
+import content.CheckerBoard;
 
 import javax.swing.*;
 

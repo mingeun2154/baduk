@@ -1,7 +1,7 @@
 package View;
 
-import component.LoadGameButton;
-import component.NewGameButton;
+import content.LoadGameButton;
+import content.NewGameButton;
 import controller.StartScreenController;
 
 import javax.swing.*;

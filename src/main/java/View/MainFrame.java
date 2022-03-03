@@ -4,12 +4,12 @@ import content.PopupWindow;
 
 import javax.swing.*;
 
-public class BRenderer extends JFrame {
+public class MainFrame extends JFrame {
 
     private JPanel startScreenPanel;
     private JPanel newGamePanel;
 
-    public BRenderer(){
+    public MainFrame(){
         // panel 초기화
         startScreenPanel = new StartScreen();
         // frame 초기화
