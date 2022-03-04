@@ -4,19 +4,17 @@ import content.PopupWindow;
 
 import javax.swing.*;
 
+// singleton pattern 적용
 public class MainFrame extends JFrame {
 
-    private JPanel startScreenPanel;
-    private JPanel newGamePanel;
+    private static MainFrame singleton = new MainFrame();
 
-    public MainFrame(){
-        // panel 초기화
-        startScreenPanel = new StartPanel();
+    public static MainFrame getInstance(){
+        return singleton;
+    }
+    private MainFrame(){
         // frame 초기화
         initWindow();
-        this.add(startScreenPanel);
-        // 화면 출력
-        this.setVisible(PopupWindow.IsVisible());
     }
 
     private void initWindow(){

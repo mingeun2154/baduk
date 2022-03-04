@@ -5,35 +5,17 @@ import content.NewGameButton;
 import controller.StartScreenController;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class StartPanel extends JPanel {
 
-    // controller
-    StartScreenController startScreenController;
-    // components
-    private JButton loadGameButton;
-    private JButton newGameButton;
+//    private int width=800;
+//    private int height=600;
+    private Color backgroundColor=Color.BLACK;
 
     public StartPanel(){
-        // DI
-        startScreenController = new StartScreenController();
-
-        this.setLayout(null);
-        initComponents();
-        addComponents();
+        setBackground(backgroundColor);
+        setLayout(null);
     }
 
-    private void initComponents(){
-        // loadGameButton
-        loadGameButton = new LoadGameButton();
-        loadGameButton.addActionListener(startScreenController);
-        // newGameButton
-        newGameButton = new NewGameButton();
-        newGameButton.addActionListener(startScreenController);
-    }
-
-    private void addComponents(){
-        this.add(loadGameButton);
-        this.add(newGameButton);
-    }
 }

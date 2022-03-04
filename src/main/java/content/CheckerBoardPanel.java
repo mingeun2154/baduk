@@ -3,7 +3,7 @@ package content;
 import javax.swing.*;
 import java.awt.*;
 
-public class CheckerBoard extends JPanel{
+public class CheckerBoardPanel extends JPanel{
 
     // 보드
     private static final int x = 70;
@@ -18,7 +18,7 @@ public class CheckerBoard extends JPanel{
     private static final int endX = startX+18*interval;
     private static final int endY = startY+18*interval;
 
-    public CheckerBoard(){
+    public CheckerBoardPanel(){
         setLayout(null);
         setBounds(x,y,width,heigth);
         setBackground(backgroundColor);

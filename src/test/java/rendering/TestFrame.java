@@ -1,6 +1,6 @@
 package rendering;
 
-import component.PopupWindow;
+import content.PopupWindow;
 
 import javax.swing.*;
 
