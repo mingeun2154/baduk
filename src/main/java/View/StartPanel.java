@@ -6,7 +6,7 @@ import controller.StartScreenController;
 
 import javax.swing.*;
 
-public class StartScreen extends JPanel {
+public class StartPanel extends JPanel {
 
     // controller
     StartScreenController startScreenController;
@@ -14,7 +14,7 @@ public class StartScreen extends JPanel {
     private JButton loadGameButton;
     private JButton newGameButton;
 
-    public StartScreen(){
+    public StartPanel(){
         // DI
         startScreenController = new StartScreenController();
 

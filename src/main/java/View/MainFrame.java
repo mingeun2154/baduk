@@ -11,7 +11,7 @@ public class MainFrame extends JFrame {
 
     public MainFrame(){
         // panel 초기화
-        startScreenPanel = new StartScreen();
+        startScreenPanel = new StartPanel();
         // frame 초기화
         initWindow();
         this.add(startScreenPanel);
