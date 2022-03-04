@@ -1,14 +1,10 @@
-import content.CheckerBoardPanel;
-import view.NewGamePanel;
-import rendering.TestFrame;
+import rendering.ScreenTest;
 
 public class BadukApplicationTest {
 
-        public static void main(String[] args){
-            // 새 게임 버튼을 눌렀을 때
-            CheckerBoardPanel checkerBoardPanel = new CheckerBoardPanel();
-            NewGamePanel newGamePanel = new NewGamePanel();
-            newGamePanel.add(checkerBoardPanel);
-            new TestFrame(newGamePanel);
-        }
+    public static void main(String[] args){
+        // 새 게임 버튼을 눌렀을 때
+        ScreenTest.새_게임_화면_출력();
+    }
+
 }

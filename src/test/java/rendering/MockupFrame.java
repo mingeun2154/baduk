@@ -4,9 +4,9 @@ import content.PopupWindow;
 
 import javax.swing.*;
 
-public class TestFrame extends JFrame {
+public class MockupFrame extends JFrame {
 
-    public TestFrame(JPanel testPanel){
+    public MockupFrame(JPanel testPanel){
         // frame 초기화
         initWindow();
         // frame에 panel 추가
