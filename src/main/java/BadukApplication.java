@@ -1,4 +1,4 @@
-import View.MainFrame;
+import view.MainFrame;
 
 public class BadukApplication {
     public static void main(String[] args){

@@ -1,4 +1,4 @@
-import View.NewGamePanel;
+import view.NewGamePanel;
 import rendering.TestFrame;
 
 public class BadukApplicationTest {
