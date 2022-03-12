@@ -1,27 +1,24 @@
 package content;
 
+import domain.CheckerBoard;
+
 import javax.swing.*;
 import java.awt.*;
 
+import static domain.CheckerBoard.*;
+
+// 바둑판과 그 위에 착수된 돌들을 그린다
 public class CheckerBoardPanel extends JPanel{
 
-    // 보드
-    private static final int x = 70;
-    private static final int y = 70;
-    private static final int width = 380;
-    private static final int heigth = width;
-    private static final Color backgroundColor= new Color(214, 181, 105);
-    // 선
-    private static final int startX = 10;
-    private static final int startY = 10;
-    private static final int interval = 20;
-    private static final int endX = startX+18*interval;
-    private static final int endY = startY+18*interval;
+    // Model
+    CheckerBoard checkerBoard;
 
-    public CheckerBoardPanel(){
+    public CheckerBoardPanel(CheckerBoard checkerBoard){
+        // DI
+        this.checkerBoard = checkerBoard;
         setLayout(null);
-        setBounds(x,y,width,heigth);
-        setBackground(backgroundColor);
+        setBounds(CheckerBoard.x,CheckerBoard.y,CheckerBoard.width,CheckerBoard.heigth);
+        setBackground(CheckerBoard.backgroundColor);
     }
 
     @Override
@@ -36,6 +33,21 @@ public class CheckerBoardPanel extends JPanel{
         for (int i=0;i<20;i++){
             g.drawLine(startX, startY+i*interval,
                         endX, startY+i*interval);
+        }
+
+        // 바둑돌
+        for (int i=1;i<20;i++){
+            for (int j=1;j<20;j++){
+                // ?
+//                if (checkerBoard.IsHighlight(i, j)){
+//                    g.fillOval(startX+(i-1)*interval-interval/2, startY+(j-1)*interval-interval/2,
+//                                bold, bold);
+//                }
+                if (!checkerBoard.IsAvailable(i,j)){
+                    g.fillOval(startX+(i-1)*interval-interval/2, startY+(j-1)*interval-interval/2,
+                            stone, stone);
+                }
+            }
         }
     }
 

@@ -4,13 +4,19 @@ import java.awt.*;
 
 public class Intersection {
 
+    boolean isEmphasize;
     Color stoneColor; // 놓인 돌의 색 (없으면 null)
     int type; // 2:귀 3:변 4:점 (최대 활로의 개수)
 
     // constructor
-    public Intersection(){
+    public Intersection(int type){
+        isEmphasize = false;
         stoneColor = null;
-        this.type = 0;
+        this.type = type;
+    }
+
+    public boolean IsEmphasize(){
+        return isEmphasize;
     }
 
     public Color getStoneColor() {
@@ -23,6 +29,10 @@ public class Intersection {
 
     public int getType() {
         return type;
+    }
+
+    public void setEmphasize(boolean bool){
+        isEmphasize=bool;
     }
 
     public void setType(int type) {

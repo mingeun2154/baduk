@@ -15,7 +15,9 @@ public class StartScreenController implements ActionListener {
     NewGamePanel nextPanel;
     StartPanel currentPanel;
 
+    // constructor
     public StartScreenController(StartPanel startPanel, NewGamePanel newGamePanel){
+        // DI : startPanel, newGamePanel (view)
         currentPanel = startPanel;
         nextPanel = newGamePanel;
     }

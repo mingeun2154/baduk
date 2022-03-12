@@ -1,9 +1,31 @@
 package domain;
 
+import java.awt.*;
+
 public class CheckerBoard {
 
-    Intersection[][] grid;
+    // ui를 그리기 위해 필요한 필드
+    // 보드
+    public static final int x = 70;
+    public static final int y = 70;
+    public static final int width = 380;
+    public static final int heigth = width;
+    public static final Color backgroundColor= new Color(214, 181, 105);
+    // 선
+    public static final int startX = 10;
+    public static final int startY = 10;
+    public static final int interval = 20;
+    public static final int endX = startX+18*interval;
+    public static final int endY = startY+18*interval;
+    // 바둑돌, 강조표시
+    public static final int bold = 5;
+    public static final int stone = 20;
 
+    // data를 담는 필드
+    // 바둑판의 모든 점
+    private Intersection[][] grid ;
+
+    // constructor
     public CheckerBoard(){
         /* grid
         index와 실제 선의 번호를 맞추기 위해 20X20 배열 선언
@@ -16,14 +38,49 @@ public class CheckerBoard {
             for(int j=1;j<20;j++){
                 if (i==1 || i==19 || j==1 || j==19){
                     if (i+j==2 || i+j==20)
-                        grid[i][j].setType(2); // 귀
+                        grid[i][j]=new Intersection(2); // 귀
                     else
-                        grid[i][j].setType(3); // 변
+                        grid[i][j]=new Intersection(3); // 변
                 }
                 else
-                    grid[i][j].setType(4); // 점
+                    grid[i][j]=new Intersection(4); // 점
             }
         }
 
     }
+
+    // 인수로 받은 점에 착수 불가능하다면 false 반환
+    // 착수가능하다면 true 반환
+    public boolean IsAvailable(int row, int column){
+        if (grid[row][column].getStoneColor()==null)
+            return true;
+        else
+            return false;
+    }
+
+    public boolean IsEmpty(int row, int column){
+        if (grid[row][column].getStoneColor()==null)
+            return true;
+        else
+            return false;
+    }
+
+    public boolean IsHighlight(int row, int column){
+        return grid[row][column].IsEmphasize();
+    }
+
+    public void fill(int row, int column){
+        grid[row][column].setStoneColor(Color.black);
+        // LOG
+        System.out.println("fill "+row+", "+column);
+    }
+
+    public void highlight(int row, int column){
+        grid[row][column].setEmphasize(true);
+    }
+
+    public void eraseHighlight(int row, int column){
+        grid[row][column].setEmphasize(false);
+    }
+
 }

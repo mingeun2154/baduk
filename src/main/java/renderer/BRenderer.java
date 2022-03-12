@@ -3,7 +3,10 @@ package renderer;
 import content.CheckerBoardPanel;
 import content.LoadGameButton;
 import content.NewGameButton;
+import controller.CheckerBoardController;
 import controller.StartScreenController;
+import domain.CheckerBoard;
+import service.CheckerBoardService;
 import view.MainFrame;
 import view.NewGamePanel;
 import view.StartPanel;
@@ -23,6 +26,9 @@ public class BRenderer {
     // 새 게임 화면
     private NewGamePanel newGamePanel;
     private CheckerBoardPanel checkerBoardPanel;
+    private CheckerBoard checkerBoard;
+    private CheckerBoardController checkerBoardController;
+    private CheckerBoardService checkerBoardService;
 
     // constructor
     public BRenderer(){
@@ -39,13 +45,15 @@ public class BRenderer {
         mainFrame = MainFrame.getInstance();
         contentPane = mainFrame.getContentPane();
         startPanel = new StartPanel();
-        checkerBoardPanel = new CheckerBoardPanel();
         newGamePanel = new NewGamePanel();
         // init content
         loadGameButton = new LoadGameButton();
         newGameButton =new NewGameButton();
+        checkerBoardPanel = new CheckerBoardPanel(checkerBoard);
         // init controller
         startScreenController = new StartScreenController(startPanel, newGamePanel);
+        checkerBoardController = new CheckerBoardController(checkerBoardPanel, checkerBoardService);
+
     }
 
     private void renderStartScreen(){
@@ -58,7 +66,7 @@ public class BRenderer {
 
     private void renderNewGameScreen(){
         newGamePanel.add(checkerBoardPanel);
-
+        checkerBoardPanel.addMouseListener(checkerBoardController);
     }
 
 }
