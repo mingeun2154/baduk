@@ -1,24 +1,26 @@
 package controller;
 
-import content.CheckerBoardPanel;
+import content.TurnLabel;
+import view.CheckerBoardPanel;
 import domain.CheckerBoard;
 import service.CheckerBoardService;
 
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class CheckerBoardController extends MouseAdapter {
 
     CheckerBoardPanel checkerBoardPanel;
+    TurnLabel turnLabel;
     CheckerBoardService checkerBoardService;
 
     // constructor
-    public CheckerBoardController(CheckerBoardPanel checkerBoardPanel, CheckerBoardService checkerBoardService){
-        // DI : checkerBoard (domain), checkerBoardPanel
+    public CheckerBoardController(CheckerBoardPanel checkerBoardPanel,
+                                  TurnLabel turnlabel,
+                                  CheckerBoardService checkerBoardService){
+        // DI
         this.checkerBoardPanel = checkerBoardPanel;
+        this.turnLabel=turnlabel;
         this.checkerBoardService = checkerBoardService;
     }
 
@@ -32,6 +34,7 @@ public class CheckerBoardController extends MouseAdapter {
         int column = y/CheckerBoard.interval+1;
         checkerBoardService.setStone(row, column);
         checkerBoardPanel.repaint();
+        turnLabel.repaint();
     }
 
 //    @Override

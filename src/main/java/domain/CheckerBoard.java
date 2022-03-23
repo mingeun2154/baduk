@@ -9,7 +9,7 @@ public class CheckerBoard {
     public static final int x = 70;
     public static final int y = 70;
     public static final int width = 380;
-    public static final int heigth = width;
+    public static final int height = width;
     public static final Color backgroundColor= new Color(214, 181, 105);
     // 선
     public static final int startX = 10;
@@ -49,8 +49,7 @@ public class CheckerBoard {
 
     }
 
-    // 인수로 받은 점에 착수 불가능하다면 false 반환
-    // 착수가능하다면 true 반환
+    // 인수로 받은 점에 착수 불가능하다면 false 반환, 착수가능하다면 true 반환
     public boolean IsAvailable(int row, int column){
         if (grid[row][column].getStoneColor()==null)
             return true;
@@ -58,29 +57,16 @@ public class CheckerBoard {
             return false;
     }
 
-    public boolean IsEmpty(int row, int column){
-        if (grid[row][column].getStoneColor()==null)
-            return true;
-        else
-            return false;
-    }
-
-    public boolean IsHighlight(int row, int column){
-        return grid[row][column].IsEmphasize();
-    }
-
-    public void fill(int row, int column){
-        grid[row][column].setStoneColor(Color.black);
+    // 인수로 받은 점에 놓일 돌의 색을 결정
+    public void fill(int row, int column, Color stoneColor){
+        grid[row][column].setStoneColor(stoneColor);
         // LOG
-        System.out.println("fill "+row+", "+column);
+        System.out.println(row+", "+column);
     }
 
-    public void highlight(int row, int column){
-        grid[row][column].setEmphasize(true);
-    }
-
-    public void eraseHighlight(int row, int column){
-        grid[row][column].setEmphasize(false);
+    // 인수로 받은 점에 놓인 돌의 색을 확인한다
+    public Color checkStoneColor(int row, int column){
+        return grid[row][column].getStoneColor();
     }
 
 }

@@ -1,4 +1,4 @@
-package content;
+package view;
 
 import domain.CheckerBoard;
 
@@ -17,7 +17,7 @@ public class CheckerBoardPanel extends JPanel{
         // DI
         this.checkerBoard = checkerBoard;
         setLayout(null);
-        setBounds(CheckerBoard.x,CheckerBoard.y,CheckerBoard.width,CheckerBoard.heigth);
+        setBounds(CheckerBoard.x,CheckerBoard.y,CheckerBoard.width,CheckerBoard.height);
         setBackground(CheckerBoard.backgroundColor);
     }
 
@@ -38,12 +38,8 @@ public class CheckerBoardPanel extends JPanel{
         // 바둑돌
         for (int i=1;i<20;i++){
             for (int j=1;j<20;j++){
-                // ?
-//                if (checkerBoard.IsHighlight(i, j)){
-//                    g.fillOval(startX+(i-1)*interval-interval/2, startY+(j-1)*interval-interval/2,
-//                                bold, bold);
-//                }
                 if (!checkerBoard.IsAvailable(i,j)){
+                    g.setColor(checkerBoard.checkStoneColor(i,j));
                     g.fillOval(startX+(i-1)*interval-interval/2, startY+(j-1)*interval-interval/2,
                             stone, stone);
                 }

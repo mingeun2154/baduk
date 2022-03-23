@@ -15,10 +15,6 @@ public class Intersection {
         this.type = type;
     }
 
-    public boolean IsEmphasize(){
-        return isEmphasize;
-    }
-
     public Color getStoneColor() {
         return stoneColor;
     }
