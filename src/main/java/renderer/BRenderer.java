@@ -1,6 +1,8 @@
 package renderer;
 
-import content.CheckerBoardPanel;
+import content.TurnLabel;
+import domain.GameInfo;
+import view.CheckerBoardPanel;
 import content.LoadGameButton;
 import content.NewGameButton;
 import controller.CheckerBoardController;
@@ -29,6 +31,8 @@ public class BRenderer {
     private CheckerBoard checkerBoard;
     private CheckerBoardController checkerBoardController;
     private CheckerBoardService checkerBoardService;
+    private GameInfo gameInfo;
+    private TurnLabel turnLabel;
 
     // constructor
     public BRenderer(){
@@ -49,10 +53,11 @@ public class BRenderer {
         // init content
         loadGameButton = new LoadGameButton();
         newGameButton =new NewGameButton();
+        turnLabel=new TurnLabel(gameInfo);
         checkerBoardPanel = new CheckerBoardPanel(checkerBoard);
         // init controller
         startScreenController = new StartScreenController(startPanel, newGamePanel);
-        checkerBoardController = new CheckerBoardController(checkerBoardPanel, checkerBoardService);
+        checkerBoardController = new CheckerBoardController(checkerBoardPanel, turnLabel, checkerBoardService);
 
     }
 
